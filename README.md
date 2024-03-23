@@ -9,11 +9,17 @@ Can be used in combination with a cron job to automate server backups
 # How to Run with Cron
 - Install the script somewhere like /usr/local/bin:
 ```
-sudo install ./backup.sh /usr/local/bin/backup
+sudo install ./site-backup.sh /usr/local/bin/site-backup
 ```
 - Create a cronjob that will execute the script for every interval you want to back up a specific folder.
 ```
 crontab -e
-# TO BE COMPLETED
+
+# An example cron job is shown below
+
+0 0 * * 5 site-backup /var/www/mysite /var/www/backups mysitedb
 
 ```
+
+TODO:
+- Add SMS notification to notify admin after finishing the backup task`
